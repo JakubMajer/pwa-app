@@ -4,40 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moje Mini PWA</title>
-
-    <!-- PWA manifest -->
-    <link rel="manifest" href="manifest.json" />
-
-    <!-- Apple meta -->
+    <link rel="manifest" href="/manifest.json" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <link rel="apple-touch-icon" href="icon-192.png" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
   </head>
   <body>
-    <div class="container">
-      <h1>Moje Mini PWA</h1>
-      <p>Tato aplikace funguje i offline díky Service Workeru!</p>
-      <button id="clickBtn">Klikni mě</button>
-      <p id="output"></p>
-    </div>
-
-    <!-- JS -->
-    <script src="app.js"></script>
-
-    <!-- Service Worker registrace -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then(() => console.log("Service Worker registrován"))
-          .catch((err) => console.error("Chyba při registraci:", err));
-      }
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
